@@ -158,3 +158,146 @@ printf("Years= %d Weeks= %d Days= %d",years,weeks,days);
 return 0;
 }
 
+// write a program to input a number and print its equivalent in character code.
+#include<stdio.h>
+int main()
+{
+int n;
+printf("Enter a number: ");
+scanf("%d",&n);
+printf("Equivalent character code is %c",n);    
+return 0;
+}
+
+// write a program to input 2 numbers and print thier quotient and remainder.
+#include<stdio.h>
+int main()
+{
+int a,b,quotient,remainder;
+printf("Enter 2 numbers: ");
+scanf("%d%d",&a,&b);
+quotient=a/b;
+remainder=a%b;
+printf("Quotient= %d Remainder= %d",quotient,remainder);
+return 0;
+}
+
+// write a program to find out quotient and remainder without using % operator.
+#include<stdio.h>
+int main()
+{
+int a,b,quotient,remainder;
+printf("Enter 2 numbers: ");
+scanf("%d%d",&a,&b);
+quotient=a/b;
+remainder=a-(quotient*b);
+printf("Quotient= %d Remainder= %d",quotient,remainder);
+return 0;
+}
+
+// write a program to input 2 numbers and print the greater number.
+#include<stdio.h>
+int main()
+{
+int a,b;
+printf("Enter 2 numbers: ");
+scanf("%d%d",&a,&b);
+if(a>b){
+printf("%d is greater than %d",a,b);
+}
+else{
+printf("%d is greater than %d",b,a);
+}
+return 0;
+}
+
+// write a program to input marks of a student and print the result (pass or fail).
+#include<stdio.h>
+int main()
+{
+int marks;
+printf("Enter marks of a student: ");
+scanf("%d",&marks);
+if(marks>=40){
+printf("Pass");
+}
+else{
+printf("Fail");
+}
+return 0;
+}
+
+// write a program to find out area of triangle.
+#include<stdio.h>
+int main()
+{
+float b,h,area;
+printf("Enter base and height of a triangle: ");
+scanf("%f%f",&b,&h);
+area=0.5*b*h;
+printf("Area of triangle is %f",area);
+return 0;
+}
+
+// write a program to find whether a number is even or odd.
+#include<stdio.h>
+int main()
+{
+int n;
+printf("Enter a number: ");
+scanf("%d",&n);
+if(n%2==0){
+printf("%d is even",n);
+}
+else{
+printf("%d is odd",n);
+}
+return 0;
+}
+
+// write a program to input inches from the user and convert into yards. feets and inches.
+#include<stdio.h>
+int main()
+{
+int inches,yards,feets;
+printf("Enter inches: ");
+scanf("%d",&inches);
+yards=inches/36;
+feets=(inches%36)/12;
+inches=inches-((yards*36)+(feets*12));
+printf("Yards= %d Feets= %d Inches= %d",yards,feets,inches);
+return 0;
+}
+
+// write a program to find out greatest of 3 numbers.
+#include<stdio.h>
+int main()
+{
+int a,b,c;
+printf("Enter 3 numbers: ");
+scanf("%d%d%d",&a,&b,&c);
+if(a>b && a>c){
+printf("%d is greatest",a);
+}
+else if(b>a && b>c){
+printf("%d is greatest",b);
+}
+else{
+printf("%d is greatest",c);
+}
+return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
