@@ -112,9 +112,7 @@ public class PrimeNumber {
             }
         }
 
-        if (num <= 1) {
-            isPrime = false;
-        }
+        isPrime = num <= 1 ? false : isPrime;
 
         System.out.println(num + " is " + (isPrime ? "prime." : "not prime."));
     }
@@ -134,13 +132,10 @@ public class FibonacciSeries {
 
         System.out.print("Fibonacci Series: ");
         for (int i = 0; i < n; i++) {
-            if (i <= 1) {
-                next = i;
-            } else {
-                next = first + second;
-                first = second;
-                second = next;
-            }
+            next = i <= 1 ? i : (first + second);
+            first = i <= 1 ? first : second;
+            second = i <= 1 ? second : next;
+
             System.out.print(next + " ");
         }
     }
@@ -180,11 +175,8 @@ public class EvenOdd {
         System.out.print("Enter a number: ");
         num = scanner.nextInt();
 
-        if (num % 2 == 0) {
-            System.out.println(num + " is even.");
-        } else {
-            System.out.println(num + " is odd.");
-        }
+        String result = num % 2 == 0 ? "even." : "odd.";
+        System.out.println(num + " is " + result);
     }
 }
 
@@ -200,19 +192,7 @@ public class GradeFinder {
         System.out.print("Enter the marks obtained: ");
         marks = scanner.nextInt();
 
-        char grade;
-
-        if (marks < 50) {
-            grade = 'D';
-        } else if (marks >= 50 && marks < 60) {
-            grade = 'C';
-        } else if (marks >= 60 && marks < 70) {
-            grade = 'B';
-        } else if (marks >= 70 && marks < 80) {
-            grade = 'A';
-        } else {
-            grade = 'A';
-        }
+        char grade = marks < 50 ? 'D' : marks < 60 ? 'C' : marks < 70 ? 'B' : marks < 80 ? 'A' : 'A';
 
         System.out.println("Grade: " + grade);
     }
@@ -266,15 +246,15 @@ public class BoxDemo {
     }
 }
 
-// Write a program in Java to initialize and print the elements in an array
+// Write a program in Java to initialize and print the elements in an array.
 
 public class ArrayInitialization {
     public static void main(String[] args) {
         int[] numbers = {10, 20, 30, 40, 50};
 
         System.out.print("Elements of the array: ");
-        for (int i = 0; i < numbers.length; i++) {
-            System.out.print(numbers[i] + " ");
+        for (int number : numbers) {
+            System.out.print(number + " ");
         }
     }
 }
@@ -292,18 +272,14 @@ public class LinearSearch {
         int searchNumber = scanner.nextInt();
 
         boolean found = false;
-        for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] == searchNumber) {
+        for (int number : numbers) {
+            if (number == searchNumber) {
                 found = true;
                 break;
             }
         }
 
-        if (found) {
-            System.out.println("Number found in the array.");
-        } else {
-            System.out.println("Number not found in the array.");
-        }
+        System.out.println("Number " + (found ? "found" : "not found") + " in the array.");
     }
 }
 
@@ -322,11 +298,7 @@ public class BinarySearch {
 
         int index = Arrays.binarySearch(numbers, searchNumber);
 
-        if (index >= 0) {
-            System.out.println("Number found at index " + index + " in the array.");
-        } else {
-            System.out.println("Number not found in the array.");
-        }
+        System.out.println("Number " + (index >= 0 ? ("found at index " + index) : "not found in the array."));
     }
 }
 
